@@ -1,9 +1,15 @@
 # SDR Receiver Using a Tayloe Quadrature Detector
- simple SDR Receiver that can receive frequencies up to approximately 30MHz. So simple that it can even be built on a breadboard.
+ Simple SDR Receiver that can receive frequencies up to approximately 30MHz, if an optional Si5351 clock generator is used. Without this, it receives up to about 20MHz, using the ESP32 clock dividers. The circuit is so simple that it can even be built on a breadboard.   
+
+![](img/sdr-brdb.jpg) Tayloe Quadrature Detector circuit on a solderless breadboard    
+
+![](img/PCB.jpg) Circuit on a PCB with USB capture device connected
 
 ### What you need
+- ESP32 Development Module
 - The [circuit](schematic/schematic.pdf) on Breadboard or PCB
-- Soundcard or USB sound capture device with stereo input and a sample rate of at least 48 kbit/s.
+- Sound card or USB sound capture device with stereo input and a sample rate of at least 48 kbit/s.
+- At least 10m or wire as an antenna
 - Windows or Linux PC. A Raspberry Pi or similar board might also work, but I didn't test this.
 
 ### Arduino Libraries
@@ -16,5 +22,7 @@
 - On Linux: Copy the file into the root of your home directory
 - Set `#define USE_SI5351 1` in the [ESP32 sketch](sketch/sketch.ino) if you are using an Si5351. 
 - Flash it to your ESP32 dev module.
+- Connect output "I" to the right channel and "Q" to the left channel of your sound card.
+- Start [Quisk](https://james.ahlstrom.name/quisk/) and have fun
 
 
