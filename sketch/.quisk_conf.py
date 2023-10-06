@@ -138,20 +138,10 @@ class Hardware(BaseHardware):
     if len(data1) == 0:
        return -1
         
-    # Maybe we didn't catch an OK line?
-    if data1.startswith(b'OK'):
-       data1 = self.or_serial.readline()
-        
-    # Check to see if we have a comma in the string. If not, there is no argument.
     if data1.find(b',') == -1:
        return -1
     
     data1 = data1.split(b',')[1].rstrip(b'\r\n')
     #print("data1 = "+data1.decode())
     
-    # Check for the OK string
-    data2 = self.or_serial.readline()
-    #print("data2 = "+data2.decode())
-
-    if data2.startswith(b'OK'):
-       return data1
+    return data1
