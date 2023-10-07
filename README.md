@@ -17,6 +17,7 @@
 
 ### Installation
 - Download and install [Quisk](https://james.ahlstrom.name/quisk/)
+- Make sure that TKinter is installed. If not type `sudo apt install python3-tk`
 - Configure the serial port the ESP32 is connected to in the variable *openradio_serial_port* in [.quisk_conf.py](sketch/.quisk_conf.py), i.e. `openradio_serial_port = "/dev/ttyUSB0"` on Linux or `openradio_serial_port = "COM1"` on Windows.
 - On Windows: copy the script [.quisk_conf.py](sketch/.quisk_conf.py) into the "Documents" folder of your user directory.
 - On Linux: Copy the file into the root of your home directory
