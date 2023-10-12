@@ -90,7 +90,7 @@ class Hardware(BaseHardware):
       print("Outside range! Setting to %d" % openradio_upper)
 
     if(source == "BtnUpDown"):
-      tune = vfo
+      tune = vfo + 10000 
 
       #print("sample_rate =")
     #print(sample_rate)
