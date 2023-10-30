@@ -21,7 +21,7 @@ import sys
 # Sound card and serial port settings depending on OS
 #
 sample_rate = 48000					# name_of_sound_capt hardware sample rate in Hertz
-openradio_serial_rate = 112500
+openradio_serial_rate = 115200
 
 if sys.platform == "win32":
   name_of_sound_capt = "Primary"
@@ -38,8 +38,8 @@ channel_q = 0						# Soundcard index of quadrature channel:  0, 1, 2, ...
 
 # OpenRadio Frequency limits.
 # These are just within the limits set in the openradio_quisk firmware.
-openradio_lower = 0
-openradio_upper = 200000000
+openradio_lower = sample_rate
+openradio_upper = 30000000
 
 # OpenRadio Hardware Control Class
 #

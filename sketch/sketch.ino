@@ -7,10 +7,10 @@
 #define VERSION "EasySDR Firmware V1.0"
 
 // Default output frequency
-#define FREQ_LIMIT_LOWER 24000
+#define FREQ_LIMIT_LOWER 	48000 //Baud rate of capturing device
 #if USE_SI5351
-#define MAX_ESP_FREQ 5000000
-#define FREQ_LIMIT_UPPER 150000000
+#define MAX_ESP_FREQ 		5000000
+#define FREQ_LIMIT_UPPER 	30000000
 #else
 #define MAX_ESP_FREQ 20000000
 #define FREQ_LIMIT_UPPER MAX_ESP_FREQ
@@ -28,7 +28,7 @@
 #define OFFSET_T 100000 
 #define DUTY (1UL << (PWMRES - 1)) // Duty cycle 50%
 
-#define SERIAL_BAUD 112500
+#define SERIAL_BAUD 115200
 
 #if USE_SI5351
 #include <Wire.h>
@@ -51,7 +51,7 @@ void setup()
 	if (si5351.init(SI5351_CRYSTAL_LOAD_8PF, 27000000, 0))
 		printf("Si5351 found\n");
 	else
-		printf("Error: Si5351 not found");
+		printf("Error: Si5351 not found\n");
 
 	//  Set output frequencies
 	si5351.output_enable(SI5351_CLK2, 1);
