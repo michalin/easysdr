@@ -30,7 +30,7 @@
 
 ### Usage with HDSDR (Windows only)
 - Download and install [HDSDR](https://www.hdsdr.de/)
-- Download and install [Omni-rig](http://dxatlas.com/OmniRig/)
+- Download and install [Omni-rig V2.1](https://www.hb9ryz.ch/omnirig)
 - Copy the file [MYSDR.ini](omni-rig/MYSDR.ini) to `%APPDATA%\Afreet\Rigs`
 - Start Omni-rig and set a custom rig name (i.e. RIG1), Rig-Type: 'MYRIG', your COM-Port and 115200 as baud rate
 - Configure Omni-rig and HDSDR like shown in the picture below:
